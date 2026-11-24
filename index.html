@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <main class="contenedor">
+
+        <h1>historias </h1>
+
+        <!-- Contenedor de historias -->
+        <section class="contenedor-historias">
+
+            <button class="boton-agregar" id="crearRapido">
+                +
+            </button>
+
+            <div id="listaHistorias" class="lista-historias"></div>
+
+        </section>
+
+        <!-- Formulario para crear historias -->
+        <section class="formulario-seccion" id="formularioSeccion">
+
+            <h2>Crear historia</h2>
+
+            <form id="formularioHistoria">
+
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" required>
+
+                <label for="texto">Texto de la historia</label>
+                <textarea id="texto" required></textarea>
+
+                <label for="imagen">Imagen (opcional)</label>
+                <input type="file" id="imagen" accept="image/*">
+
+                <button type="submit">Publicar</button>
+
+                <button type="button" id="cancelar">Cancelar</button>
+
+            </form>
+
+            <p id="mensaje"></p>
+
+        </section>
+
+    </main>
+
+    <!-- Visor de historias -->
+    <div id="visor" class="visor oculto">
+
+        <div class="visor-contenido" id="visorContenido">
+
+            <div id="barrasProgreso" class="barras-progreso"></div>
+
+            <div class="visor-cabecera">
+                <div id="datosAutor" class="datos-autor"></div>
+                <button id="cerrarVisor" class="cerrar">×</button>
+            </div>
+
+            <div id="contenidoHistoria" class="contenido-historia"></div>
+
+            <button id="zonaAnterior" class="zona-navegacion zona-anterior"></button>
+            <button id="zonaSiguiente" class="zona-navegacion zona-siguiente"></button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

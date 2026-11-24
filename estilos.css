@@ -1,0 +1,319 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    color: black;
+}
+
+.contenedor {
+    width: 100%;
+    padding: 20px 10px;
+}
+
+/* Titulo */
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 22px;
+    font-weight: bold;
+}
+
+/* Contenedor de historias */
+
+.contenedor-historias {
+    width: 100%;
+    min-height: 95px;
+    border: 1px solid #d1d1d1;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+}
+
+/* Boton agregar */
+
+.boton-agregar {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    border: 1.5px solid #bdbdbd;
+    border-radius: 50%;
+    background: white;
+    color: #999;
+    font-size: 32px;
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.boton-agregar:hover {
+    background: #f5f5f5;
+}
+
+/* Lista de historias */
+
+.lista-historias {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+}
+
+.historia-item {
+    min-width: 64px;
+    width: 64px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.foto-historia {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    padding: 2px;
+    display: block;
+}
+
+.foto-historia.vista {
+    border-color: #bdbdbd;
+}
+
+.foto-interior {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.foto-interior img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nombre-historia {
+    display: block;
+    font-size: 11px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Formulario */
+
+.formulario-seccion {
+    display: none;
+    max-width: 450px;
+    margin: 25px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.formulario-seccion.mostrar {
+    display: block;
+}
+
+.formulario-seccion h2 {
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 14px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+form button {
+    padding: 11px;
+    border: none;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+}
+
+#cancelar {
+    background: #777;
+}
+
+#mensaje {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+/* Visor de historias */
+
+.visor {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.oculto {
+    display: none;
+}
+
+.visor-contenido {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    height: 95vh;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+}
+
+/* Barras de progreso */
+
+.barras-progreso {
+    display: flex;
+    gap: 4px;
+    padding: 10px;
+    position: relative;
+    z-index: 3;
+}
+
+.segmento-progreso {
+    height: 3px;
+    flex: 1;
+    background: #777;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.segmento-progreso span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: white;
+}
+
+.segmento-progreso.completado span {
+    width: 100%;
+}
+
+/* Informacion del usuario */
+
+.visor-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    position: relative;
+    z-index: 3;
+}
+
+.datos-autor {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.datos-autor small {
+    display: block;
+    font-weight: normal;
+    margin-top: 4px;
+}
+
+.cerrar {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Contenido de la historia */
+
+.contenido-historia {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+}
+
+.contenido-historia img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contenido-historia p {
+    position: relative;
+    z-index: 1;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Navegacion */
+
+.zona-navegacion {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    width: 35%;
+    background: transparent;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.zona-anterior {
+    left: 0;
+}
+
+.zona-siguiente {
+    right: 0;
+    width: 65%;
+}
+
+@media (max-width: 550px) {
+    .contenedor {
+        padding: 15px 8px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
